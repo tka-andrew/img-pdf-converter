@@ -6,6 +6,7 @@ ENV TZ=Etc/UTC
 
 # Install necessary packages
 # The binutlis and python3-dev are needed for pyinstaller
+# Poppler is needed to read, render or modify PDF documents
 RUN apt-get update && apt-get install -y --no-install-recommends \
         ca-certificates \
         git \
@@ -13,7 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3.7 \
         python3-tk \
         binutils \
-        python3-dev
+        python3-dev \
+        poppler-utils
 
 RUN mkdir -p /src/img-pdf-converter/
 
